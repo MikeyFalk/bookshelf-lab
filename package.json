@@ -1,0 +1,26 @@
+{
+  "name": "bookshelf-lab",
+  "version": "1.0.0",
+  "description": "**Author**: Mike Falk **Version**: 1.0.0 (increment the patch/fix version number if you make more commits past your first submission)",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MikeyFalk/bookshelf-lab.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MikeyFalk/bookshelf-lab/issues"
+  },
+  "homepage": "https://github.com/MikeyFalk/bookshelf-lab#readme",
+  "dependencies": {
+    "ejs": "^3.1.5",
+    "express": "^4.17.1",
+    "node.js": "0.0.1-security",
+    "superagent": "^6.1.0"
+  }
+}
