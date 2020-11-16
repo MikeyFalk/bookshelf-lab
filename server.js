@@ -5,16 +5,21 @@ const app = express();
 const superagent = require('superagent');
 const PORT = process.env.PORT || 3333;
 
-app.use(express.static('./public'));
+app.use('/public', express.static('public'));
 app.use(express.urlencoded({ extended: true }));
 app.set('view engine', 'ejs');
 
 app.get('/', renderHome);
 app.get('/searches/new', showForm);
 app.post('/searches', createSearch);
+app.get('/hello', showHello);
+
+function showHello(req, res){
+    res.send('Hi how are you?');
+}
 
 function renderHome(req, res) {
-    res.render('pages/index');
+    res.render('pages/index.ejs');
 }
 
 function showForm(req, res) {

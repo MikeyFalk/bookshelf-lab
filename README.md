@@ -29,9 +29,9 @@ Estimate of time needed to complete: 20 min
 
 Start time: 2PM
 
-Finish time: _____
+Finish time: 3PM
 
-Actual time needed to complete: _____
+Actual time needed to complete: 1 hour
 
 
 Number and name of feature: ________________________________
