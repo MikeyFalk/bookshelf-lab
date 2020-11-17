@@ -56,8 +56,11 @@ function Book(info) {
   console.log('this is my bookInfo: ', bookInfo);
 }
 
-
+app.use('*',(req,res)=> {
+  res.status(404).send('Sorry, that does not exist. Try another endpoint.');
+})
 
 app.listen(PORT, () => {
   console.log(`server is running:::: ${PORT}`);
 });
+//(err => console.log('Unable to connect:', err ));

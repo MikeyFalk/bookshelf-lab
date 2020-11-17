@@ -70,3 +70,15 @@ Start time: 4:20
 Finish time: 8:20
 
 Actual time needed to complete: 3 hours (took a break for family time)
+
+****************************************************
+
+Number and name of feature: #4 error messages 
+
+Estimate of time needed to complete: 20 minutes
+
+Start time: 8:30
+
+Finish time: 
+
+Actual time needed to complete: 
