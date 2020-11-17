@@ -75,10 +75,22 @@ Actual time needed to complete: 3 hours (took a break for family time)
 
 Number and name of feature: #4 error messages 
 
-Estimate of time needed to complete: 20 minutes
+Estimate of time needed to complete: 20 min
 
 Start time: 8:30
 
-Finish time: 
+Finish time: 8:50 
 
-Actual time needed to complete: 
+Actual time needed to complete: 20 min
+
+****************************************************
+
+Number and name of feature: #6 render home page on page load 
+
+Estimate of time needed to complete: 20 min
+
+Start time: 8:54
+
+Finish time: 8:58
+
+Actual time needed to complete: 4 min
