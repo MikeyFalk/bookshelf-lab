@@ -9,7 +9,22 @@
 
 <body>
     <main>
-        <%=searchResults %>
+        <ul>
+            <% bookInfo.forEach(function(o) {%>
+            <li>
+            <img src="<%= o.image %>" alt="<%= o.image %>">
+            Title:<%= o.title %>
+            Author Name:<%= o.author %>
+            Description: <%= o.description %>
+
+        <% })%>
+            </li>
+        </ul>
+       
+        
+
+
+
     </main>
 </body>
 

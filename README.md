@@ -61,12 +61,12 @@ Finish time:4:20
 Actual time needed to complete: 30 min
 ****************************************************
 
-Number and name of feature: #3 create search form 
+Number and name of feature: #3 browse feature 
 
 Estimate of time needed to complete: 1 hour
 
-Start time: 3:50
+Start time: 4:20
 
-Finish time:4:20
+Finish time: 8:20
 
-Actual time needed to complete: 30 min
+Actual time needed to complete: 3 hours (took a break for family time)

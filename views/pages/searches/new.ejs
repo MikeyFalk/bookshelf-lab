@@ -8,18 +8,20 @@
 </head>
 
 <body>
+    <h1>Search for Books</h1>
     <main>
-        <form action="" method="get" class="author"></form>
-        <div class="userinput">
-            <label for="author">Search: </label>
-            <input type="text" name="author" id="author">
-        </div>
-        <form method="post">
+        <form action="/searches" method="post">
+
+            <input type="text" name="search" placeholder="enter author or title" id="search" required>
             <fieldset>
-                <label><input type="radio" name="author">Author</label>
-                <label><input type="radio" name="title">Title</label>
+                <label>Title</label>
+                <input type="radio" name="search" value="title" required>
             </fieldset>
-            <button>Submit</button>
+            <fieldset>
+                <label>Author</label>
+                <input type="radio" name="search" value="author" required>
+            </fieldset>
+            <button type="submit">Search the Google Books API</button>
         </form>
 
     </main>
