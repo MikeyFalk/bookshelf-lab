@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Welcome Book Lovers</title>
+    <link rel="stylesheet" href="../public/styles/styles.css" type="text/css">
+</head>
+
+<body>
+    <header>Best Books</header>
+    <h2>Search by Title or Author</h2>
+    <main>
+        <form action="/searches" method="post">
+            <input type="text" name="search" placeholder="enter author or title" id="search" required>
+            <fieldset>
+                <label>Title</label>
+                <input type="radio" name="search" value="title" required>
+            </fieldset>
+            <fieldset>
+                <label>Author</label>
+                <input type="radio" name="search" value="author" required>
+            </fieldset>
+            <button type="submit">Search the Google Books API</button>
+        </form>
+
+    </main>
+
+</body>
+
+</html>
