@@ -3,22 +3,34 @@
 
 <head>
     <title>Results</title>
-    <link rel="stylesheet" href="../public/styles/reset.css" type="text/css">
-    <link rel="stylesheet" href="../public/styles/base.css" type="text/css">
+    <link rel="stylesheet" href="../public/styles/styles.css" type="text/css">
 </head>
 
 <body>
+    <header>Best Books</header>
     <main>
+        <h2>Search Results</h2>
+        
+
         <ul>
             <% bookInfo.forEach(function(o) {%>
+            <div class="bookboxes">
+
             <li>
             <img src="<%= o.image %>" alt="<%= o.image %>">
-            Title:<%= o.title %>
-            Author Name:<%= o.author %>
+            </li>
+            <li class="textbody" id="title" >
+            <%= o.title %>
+            </li>
+            <li class="textbody" id="author">
+            <%= o.author %>
+            </li>
+            <li class="textbody" id="description">
             Description: <%= o.description %>
+            </li>
+        </div>
 
         <% })%>
-            </li>
         </ul>
        
         

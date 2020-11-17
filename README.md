@@ -85,6 +85,20 @@ Actual time needed to complete: 20 min
 
 ****************************************************
 
+Number and name of feature: #5 clean looking UI
+
+Estimate of time needed to complete: 1 hour
+
+Start time: 9:00
+
+Finish time: 
+
+Actual time needed to complete: 
+
+
+
+****************************************************
+
 Number and name of feature: #6 render home page on page load 
 
 Estimate of time needed to complete: 20 min

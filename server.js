@@ -14,7 +14,12 @@ app.get('/', renderHome);
 app.get('/searches/new', showForm);
 app.post('/searches', createSearch);
 app.get('/hello', showHello);
+app.get('/error', showError)
 
+
+function showError(req, res){
+  res.send('Sorry, something went wrong: ', err);
+}
 function showHello(req, res) {
   res.send('Hi how are you?');
 }

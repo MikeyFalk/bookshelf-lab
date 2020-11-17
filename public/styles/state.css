@@ -1,0 +1,9 @@
+@media(max-width: 960px){
+    body{height: 100vw;
+    font-size: 3vw;}
+}
+
+@media(min-width: 960px){
+    body{height: 100vw;
+        font-size: 3vw;}
+}

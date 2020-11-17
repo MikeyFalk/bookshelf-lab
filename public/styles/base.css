@@ -1,2 +1,16 @@
 *{
-    background-color: antiquewhite}
+    background-color: lightgrey;
+    text-align: center;
+    box-sizing: border-box;
+}
+header{
+    height: 10vw;
+    width: 100vw;    
+    background-color: black;
+    color: whitesmoke;
+    text-align: left;
+    font-size: x-large;
+    margin: auto;
+    padding: 2vw;
+}
+
