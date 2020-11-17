@@ -23,7 +23,10 @@
 
 
 ### Time Estimates
-Number and name of feature: Set up Sever
+
+**********************************************
+
+Number and name of feature: P0 Set up Sever
 
 Estimate of time needed to complete: 20 min
 
@@ -33,13 +36,37 @@ Finish time: 3PM
 
 Actual time needed to complete: 1 hour
 
+**********************************************
 
-Number and name of feature: ________________________________
+Number and name of feature: #1 Basic set up connect CSS and ejs pages
 
-Estimate of time needed to complete: _____
+Estimate of time needed to complete: 1 hour
 
-Start time: _____
+Start time: 3 PM
 
-Finish time: _____
+Finish time: 3:45
 
-Actual time needed to complete: _____
+Actual time needed to complete: 45 min
+
+*************************************************
+
+Number and name of feature: #2 create search form
+
+Estimate of time needed to complete: 1 hour
+
+Start time: 3:50
+
+Finish time:4:20
+
+Actual time needed to complete: 30 min
+****************************************************
+
+Number and name of feature: #3 create search form 
+
+Estimate of time needed to complete: 1 hour
+
+Start time: 3:50
+
+Finish time:4:20
+
+Actual time needed to complete: 30 min
