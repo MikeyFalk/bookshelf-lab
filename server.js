@@ -4,7 +4,16 @@ let bookInfo = [];
 const express = require('express');
 const app = express();
 const superagent = require('superagent');
+const dotenv = require('dotenv');
+const pg = require('pg');
+
+dotenv.config();
+
 const PORT = process.env.PORT || 3333;
+const client = new pg.Client(process.env.DATABASE_URL);
+
+
+
 
 app.use('/public', express.static('public'));
 app.use(express.urlencoded({ extended: true }));
@@ -25,7 +34,12 @@ function showHello(req, res) {
 }
 
 function renderHome(req, res) {
-  res.render('pages/index.ejs');
+  let SQL = 'SELECT * FROM books;';
+  
+
+  return client.query(SQL)
+    .then(results => res.render('index', { results: results.rows}))
+    .catch(err => console.error(err));
 }
 
 function showForm(req, res) {
@@ -65,7 +79,13 @@ app.use('*',(req,res)=> {
   res.status(404).send('Sorry, that does not exist. Try another endpoint.');
 })
 
-app.listen(PORT, () => {
-  console.log(`server is running:::: ${PORT}`);
-});
-//(err => console.log('Unable to connect:', err ));
+client.on('error',err => console.err(err));
+
+client.connect()
+  .then(()=>{
+    console.log('connected to DB yay!')
+    app.listen(PORT, () => {
+      console.log(`server is running:::: ${PORT}`);
+    });
+  })
+  .catch(err => console.log('Unable to connect:', err ));

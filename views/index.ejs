@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Book Shelf App</title>
+    <link rel="stylesheet" href="../public/styles/styles.css" text="text/css">
+</head>
+
+<body>
+    <main>
+        <h1>Hello World</h1>
+
+        <div>Number of Saved Books:  <% results.length %></div>
+        <ul>
+            <% results.forEach(function(books) {%>
+            
+                <div class="bookboxes">
+
+            <li>
+            <img src="<%= books.image_url %>" alt="<%= books.title %>">
+            </li>
+            <li class="textbody" id="title" >
+            <%= books.title %>
+            </li>
+            <li class="textbody" id="author">
+            <%= books.author %>
+            </li>
+            <li class="textbody" id="description">
+            Description: <%= books.description %>
+            </li>
+        </div>
+
+        <% })%>
+        </ul>
+    </main>
+</body>
+
+</html>
