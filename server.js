@@ -21,10 +21,23 @@ app.set('view engine', 'ejs');
 
 app.get('/', renderHome);
 app.get('/searches/new', showForm);
-app.post('/searches', createSearch);
 app.get('/hello', showHello);
 app.get('/error', showError);
 app.get('/books/:books_id', getBookDetails);
+app.post('/searches', createSearch);
+app.post('/add', addTask);
+
+
+function addTask(req, res) {
+  let { author, title, isbn, image_url, description } = req.body;
+  let SQL = `INSERT INTO books(author, title, isbn, image_url, description) VALUES ($1,$2,$3,$4,$5);`;
+  let values = [author, title, isbn, image_url, description];
+
+  return client.query(SQL, values)
+    .then(res.redirect('/'))
+    .catch(err => console.error(err));
+}
+
 
 function getBookDetails(req, res) {
   let SQL = 'SELECT * FROM books WHERE id=$1;';
@@ -79,9 +92,10 @@ function createSearch(req, res) {
 
 function Book(info) {
   this.title = info.title || 'no title available';
-  this.author = info.author || 'no author available';
+  this.author = info.authors || 'no author available';
   this.image = info.imageLinks.thumbnail || 'https://i.imagur.com/J5LVHEL.jpg';
   this.description = info.description || 'no description available';
+  this.isbn = info.industryIdentifiers[1].identifier;
   bookInfo.push(this);
   console.log('this is my bookInfo: ', bookInfo);
 }

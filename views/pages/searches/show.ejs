@@ -14,16 +14,20 @@
             <div class="bookboxes">
 
                 <li>
-                    <img src="<%= o.image %>" alt="<%= o.image %>">
-                </li>
-                <li class="textbody" id="title">
-                    <%= o.title %>
-                </li>
-                <li class="textbody" id="author">
-                    <%= o.author %>
-                </li>
-                <li class="textbody" id="description">
-                    Description: <%= o.description %>
+                    <form action="/add" method="post">
+                        <img src="<%= o.image %>" alt="<%= o.title %>">
+
+                        <p class="textbody" id="title">
+                            <%= o.title %>
+                        </p>
+                        <p class="textbody" id="author">
+                            <%= o.author %>
+                        </p>
+                        <p class="textbody" id="description">
+                            Description: <%= o.description %>
+                        </p>
+                        <button type="submit">Add Book!</button>
+                    </form>
                 </li>
             </div>
 
