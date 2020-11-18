@@ -8,30 +8,34 @@
 <body>
     <%- include('../layout/header.ejs') %>
     <main>
-        <h2>Search Results</h2>
+        <h2>Book Details</h2>
+
         <ul>
-            <% bookInfo.forEach(function(o) {%>
             <div class="bookboxes">
 
                 <li>
-                    <img src="<%= o.image %>" alt="<%= o.image %>">
+                    <img src="<%= book.image_url %>" alt="<%= book.title %>">
                 </li>
                 <li class="textbody" id="title">
-                    <%= o.title %>
+                    <%= book.title %>
                 </li>
                 <li class="textbody" id="author">
-                    <%= o.author %>
+                    <%= book.author %>
                 </li>
                 <li class="textbody" id="description">
-                    Description: <%= o.description %>
+                    Description: <%= book.description %>
+                </li>
+                <li class="textbody" id="description">
+                    ISBN: <%= book.isbn %>
                 </li>
             </div>
 
-            <% })%>
+
         </ul>
 
 
 
+        <a href="../">Return Home</a>
 
 
     </main>

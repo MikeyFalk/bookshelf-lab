@@ -2,35 +2,33 @@
 <html>
 
 <head>
-    <title>Book Shelf App</title>
-    <link rel="stylesheet" href="../public/styles/styles.css" text="text/css">
+    <%- include('../views/pages/layout/head.ejs') %>
 </head>
 
 <body>
+    <header>
+        <%- include('../views/pages/layout/header.ejs') %>
+    </header>
     <main>
-        <h1>Hello World</h1>
-
-        <div>Number of Saved Books:  <% results.length %></div>
+        <h2>Welcome to your bookshelf</h2>
+        <div>Number of Saved Books: <%= results.length %></div>
         <ul>
             <% results.forEach(function(books) {%>
-            
-                <div class="bookboxes">
 
-            <li>
-            <img src="<%= books.image_url %>" alt="<%= books.title %>">
-            </li>
-            <li class="textbody" id="title" >
-            <%= books.title %>
-            </li>
-            <li class="textbody" id="author">
-            <%= books.author %>
-            </li>
-            <li class="textbody" id="description">
-            Description: <%= books.description %>
-            </li>
-        </div>
+            <li class="searchresults" data-id="<%= books.id %>">
+                <img src="<%= books.image_url %>" alt="<%= books.title %>">
 
-        <% })%>
+                <p class="textbody" id="title">
+                    <%= books.title %>
+                </p>
+                <p class="textbody" id="author">
+                    <%= books.author %>
+                </p>
+                <a href="/books/<%= books.id %>">View Book Details</a>
+            </li>
+
+
+            <% })%>
         </ul>
     </main>
 </body>

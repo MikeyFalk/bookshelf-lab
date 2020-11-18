@@ -23,10 +23,21 @@ app.get('/', renderHome);
 app.get('/searches/new', showForm);
 app.post('/searches', createSearch);
 app.get('/hello', showHello);
-app.get('/error', showError)
+app.get('/error', showError);
+app.get('/books/:books_id', getBookDetails);
+
+function getBookDetails(req, res) {
+  let SQL = 'SELECT * FROM books WHERE id=$1;';
+  let values = [req.params.books_id];
+  console.log('this is my id', values);
+
+  return client.query(SQL, values)
+    .then(result => res.render('pages/books/detail', { book: result.rows[0] }))
+    .catch(err => console.error('unable to get book details', err));
+}
 
 
-function showError(req, res){
+function showError(req, res) {
   res.send('Sorry, something went wrong: ', err);
 }
 function showHello(req, res) {
@@ -35,10 +46,10 @@ function showHello(req, res) {
 
 function renderHome(req, res) {
   let SQL = 'SELECT * FROM books;';
-  
+
 
   return client.query(SQL)
-    .then(results => res.render('index', { results: results.rows}))
+    .then(results => res.render('index', { results: results.rows }))
     .catch(err => console.error(err));
 }
 
@@ -75,17 +86,17 @@ function Book(info) {
   console.log('this is my bookInfo: ', bookInfo);
 }
 
-app.use('*',(req,res)=> {
+app.use('*', (req, res) => {
   res.status(404).send('Sorry, that does not exist. Try another endpoint.');
 })
 
-client.on('error',err => console.err(err));
+client.on('error', err => console.err(err));
 
 client.connect()
-  .then(()=>{
+  .then(() => {
     console.log('connected to DB yay!')
     app.listen(PORT, () => {
       console.log(`server is running:::: ${PORT}`);
     });
   })
-  .catch(err => console.log('Unable to connect:', err ));
+  .catch(err => console.log('Unable to connect:', err));

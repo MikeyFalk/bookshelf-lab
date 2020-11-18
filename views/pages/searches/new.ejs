@@ -2,14 +2,13 @@
 <html>
 
 <head>
-    <title>Welcome Book Lovers</title>
-    <link rel="stylesheet" href="../public/styles/styles.css" type="text/css">
+    <%- include('../layout/head.ejs') %>
 </head>
 
 <body>
-    <header>Best Books</header>
-    <h2>Search by Title or Author</h2>
+    <%- include('../layout/header.ejs') %>
     <main>
+        <h2>Search by Title or Author</h2>
         <form action="/searches" method="post">
             <input type="text" name="search" placeholder="enter author or title" id="search" required>
             <fieldset>
