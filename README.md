@@ -108,3 +108,15 @@ Start time: 8:54
 Finish time: 8:58
 
 Actual time needed to complete: 4 min
+
+****************************************************
+
+Number and name of feature: Day 2 Feature #1 Set Up Database 
+
+Estimate of time needed to complete: 1 hour
+
+Start time: 2:10
+
+Finish time: 
+
+Actual time needed to complete: 

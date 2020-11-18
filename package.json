@@ -18,9 +18,13 @@
   },
   "homepage": "https://github.com/MikeyFalk/bookshelf-lab#readme",
   "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
     "ejs": "^3.1.5",
     "express": "^4.17.1",
     "node.js": "0.0.1-security",
+    "nodemon": "^2.0.6",
+    "pg": "^8.5.1",
     "superagent": "^6.1.0"
   }
 }
