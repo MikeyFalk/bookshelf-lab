@@ -117,6 +117,18 @@ Estimate of time needed to complete: 1 hour
 
 Start time: 2:10
 
+Finish time: 5:00
+
+Actual time needed to complete: 3 hours
+
+******************************************************
+
+Number and name of feature: Day 2 Feature #2 Set Up link for additional details
+
+Estimate of time needed to complete: 1 hour
+
+Start time: 6:20
+
 Finish time: 
 
 Actual time needed to complete: 
