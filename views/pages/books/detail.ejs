@@ -14,7 +14,7 @@
             <div class="bookboxes">
 
                 <li>
-                    <img src="<%= book.image_url %>" alt="<%= book.title %>">
+                    <img src="<%= book.image%>" alt="<%= book.title %>">
                 </li>
                 <li class="textbody" id="title">
                     <%= book.title %>
@@ -29,7 +29,18 @@
                     ISBN: <%= book.isbn %>
                 </li>
             </div>
+            <form action="/update/<%= book.id %>?_method=PUT" method="post">
 
+                <input name="title" value="<%= book.title %>">
+                <input name="author" value="<%= book.author %>">
+                <input name="isbn" value="<%= book.isbn %>">
+                <input name="image_url" value="<%= book.image %>">
+                <input name="description" value="<%= book.description %>">
+                <button type="submit">Update Book!</button>
+            </form>
+            <button type="submit"> Try to update Book!</button>
+            <a href="../update/<%= book.id %>"">Update Book</a>
+            <a href=" ../">Delete Book</a>
 
         </ul>
 
