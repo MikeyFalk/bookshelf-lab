@@ -1,6 +1,7 @@
 'use strict';
 let bookInfo = [];
 
+const methodOverride = require('method-override');
 const express = require('express');
 const app = express();
 const superagent = require('superagent');
@@ -14,7 +15,7 @@ const client = new pg.Client(process.env.DATABASE_URL);
 
 
 
-
+app.use(methodOverride('_method'));
 app.use('/public', express.static('public'));
 app.use(express.urlencoded({ extended: true }));
 app.set('view engine', 'ejs');
@@ -24,9 +25,29 @@ app.get('/searches/new', showForm);
 app.get('/hello', showHello);
 app.get('/error', showError);
 app.get('/books/:books_id', getBookDetails);
+app.get('/detail/:book_id', directToUpdate);
+app.put('/update/:book_id', updateBook);
 app.post('/searches', createSearch);
 app.post('/add', addBook);
 
+
+function directToUpdate(req, res) {
+  res.render(`pages/books/update/${req.params.book_id}`)
+
+}
+
+function updateBook(req, res) {
+  console.log('your\re getting closer');
+  let { author, title, isbn, image_url, description } = req.body;
+  console.log('this is my put info', req.body);
+  console.log('this is my param', req.params);
+  let SQL = `UPDATE books SET author=$1, title=$2, isbn=$3, image_url=$4, description=$5 WHERE id=$6;`;
+  let values = [author, title, isbn, image_url, description, req.params.book_id];
+
+  client.query(SQL, values)
+    .then(res.redirect(`/books/${req.params.book_id}`))
+    .catch(err => console.error(err));
+}
 
 function addBook(req, res) {
   let { author, title, isbn, image_url, description } = req.body;
@@ -66,6 +87,7 @@ function renderHome(req, res) {
   return client.query(SQL)
     .then(results => res.render('index', { results: results.rows }))
     .catch(err => console.error(err));
+
 }
 
 function showForm(req, res) {

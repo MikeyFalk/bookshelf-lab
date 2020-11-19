@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <%- include('../layout/head.ejs') %>
+</head>
+
+<body>
+    <%- include('../layout/header.ejs') %>
+    <main>
+        <h2>Book Details</h2>
+
+        <ul>
+            <div class="bookboxes">
+
+                <li data-id="<%= book.id %>">
+                    <form action="/update/<%= books.id %>?_method=PUT" method="post">
+                        <img src="<%= book.image_url %>" alt="<%= book.title %>">
+                        <input name="title" value="<%= o.title %>">
+                        <input name="author" value="<%= o.author %>">
+                        <input name="isbn" value="<%= o.isbn %>">
+                        <input name="image_url" value="<%= o.image %>">
+                        <input name="description" value="<%= o.description %>">
+                        <button type="submit">Update Book!</button>
+                    </form>
+                </li>
+
+            </div>
+
+            <a href="../">Delete Book</a>
+
+        </ul>
+
+
+
+        <a href="../">Return Home</a>
+
+
+    </main>
+</body>
+
+</html>
