@@ -129,6 +129,18 @@ Estimate of time needed to complete: 1 hour
 
 Start time: 6:20
 
-Finish time: 
+Finish time:10:30 
 
-Actual time needed to complete: 
+Actual time needed to complete: 4 hours
+
+******************************************************
+
+Number and name of feature: Day 3 Feature #1 Set Up link for additional details
+
+Estimate of time needed to complete: 1 hour
+
+Start time: 6:20
+
+Finish time:10:30 
+
+Actual time needed to complete: 4 hours

@@ -25,13 +25,15 @@ app.get('/hello', showHello);
 app.get('/error', showError);
 app.get('/books/:books_id', getBookDetails);
 app.post('/searches', createSearch);
-app.post('/add', addTask);
+app.post('/add', addBook);
 
 
-function addTask(req, res) {
+function addBook(req, res) {
   let { author, title, isbn, image_url, description } = req.body;
   let SQL = `INSERT INTO books(author, title, isbn, image_url, description) VALUES ($1,$2,$3,$4,$5);`;
   let values = [author, title, isbn, image_url, description];
+  console.log('this is my SQL: ', SQL);
+  console.log('this is my req: ', req.body);
 
   return client.query(SQL, values)
     .then(res.redirect('/'))
@@ -42,7 +44,7 @@ function addTask(req, res) {
 function getBookDetails(req, res) {
   let SQL = 'SELECT * FROM books WHERE id=$1;';
   let values = [req.params.books_id];
-  console.log('this is my id', values);
+  // console.log('this is my id', values);
 
   return client.query(SQL, values)
     .then(result => res.render('pages/books/detail', { book: result.rows[0] }))
@@ -76,7 +78,7 @@ function createSearch(req, res) {
   if (req.body.search[1] === 'title') { url += `+intitle:${req.body.search[0]}`; }
   if (req.body.search[1] === 'author') { url += `+inauthor:${req.body.search[0]}`; }
 
-  console.log(url);
+  //console.log(url);
 
   superagent.get(url)
     .then(data => {
@@ -91,13 +93,15 @@ function createSearch(req, res) {
 }
 
 function Book(info) {
+
+  //console.log('this is my Info: ', info);
+
   this.title = info.title || 'no title available';
   this.author = info.authors || 'no author available';
   this.image = info.imageLinks.thumbnail || 'https://i.imagur.com/J5LVHEL.jpg';
   this.description = info.description || 'no description available';
-  this.isbn = info.industryIdentifiers[1].identifier;
+  this.isbn = info.industryIdentifiers ? info.industryIdentifiers[0].identifier : 'no isbn available';
   bookInfo.push(this);
-  console.log('this is my bookInfo: ', bookInfo);
 }
 
 app.use('*', (req, res) => {

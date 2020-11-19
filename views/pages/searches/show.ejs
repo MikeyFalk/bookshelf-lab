@@ -15,17 +15,22 @@
 
                 <li>
                     <form action="/add" method="post">
-                        <img src="<%= o.image %>" alt="<%= o.title %>">
-
-                        <p class="textbody" id="title">
+                        <img src="<%= o.image %>" alt="<%= o.title %>" name="image" value="title">
+                        <p class="textbody" id="title" name="title" value="title">
                             <%= o.title %>
                         </p>
-                        <p class="textbody" id="author">
+                        <p class="textbody" id="author" name="author" value="author">
                             <%= o.author %>
                         </p>
-                        <p class="textbody" id="description">
+                        <p class="textbody" id="description" name="description">
                             Description: <%= o.description %>
                         </p>
+
+                        <input type="hidden" name="title" value="<%= o.title %>">
+                        <input type="hidden" name="image_url" value="<%= o.image %>">
+                        <input type="hidden" name="author" value="<%= o.author %>">
+                        <input type="hidden" name="description" value="<%= o.description %>">
+                        <input type="hidden" name="isbn" value="<%= o.isbn %>">
                         <button type="submit">Add Book!</button>
                     </form>
                 </li>
